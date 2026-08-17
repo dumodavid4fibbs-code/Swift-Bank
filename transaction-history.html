@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction History | SwiftBank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Asset/css/index.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo sidebar-logo">Swift<span>Bank</span></a>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <span class="sidebar-icon">&#127968;</span> Dashboard
+        </a>
+  
+        </a>
+        <a href="transaction-history.html" class="sidebar-link active">
+          <span class="sidebar-icon">&#128220;</span> Transaction History
+        </a>
+        <a href="statements.html" class="sidebar-link">
+          <span class="sidebar-icon">&#128203;</span> Statements
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <span class="sidebar-icon">&#9881;&#65039;</span> Settings
+        </a>
+      </nav>
+      <a href="login.html" class="sidebar-logout">&#8592; Log Out</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="dashboard-main">
+
+      <!-- Top bar -->
+      <div class="dashboard-topbar">
+        <h1>Transaction History</h1>
+        <div class="topbar-actions">
+          <button class="icon-btn" aria-label="Notifications">&#128276;<span class="notif-dot"></span></button>
+          <a href="profile.html" class="avatar">D</a>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="income">Income</button>
+        <button class="filter-btn" data-filter="expense">Expenses</button>
+      </div>
+
+      <!-- Full Transaction List -->
+      <section class="panel panel--wide">
+        <ul class="transaction-list">
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#128722;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Store Purchase</span>
+              <span class="transaction-date">Aug 9, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$25.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="income">
+            <span class="transaction-icon">&#128181;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Direct Deposit</span>
+              <span class="transaction-date">Aug 8, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--positive">+$1,250.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#9981;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Fuel Purchase</span>
+              <span class="transaction-date">Aug 6, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$45.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#127860;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Coffee Shop</span>
+              <span class="transaction-date">Aug 5, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$6.50</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#127760;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Internet Payment</span>
+              <span class="transaction-date">Aug 4, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$60.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#128241;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Mobile Top-up</span>
+              <span class="transaction-date">Aug 2, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$10.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="income">
+            <span class="transaction-icon">&#128188;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Freelance Payment</span>
+              <span class="transaction-date">Jul 30, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--positive">+$480.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#127869;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Grocery Store</span>
+              <span class="transaction-date">Jul 28, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$112.40</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#127909;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Streaming Subscription</span>
+              <span class="transaction-date">Jul 25, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$15.99</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#127869;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">ATM Withdrawal</span>
+              <span class="transaction-date">Jul 22, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$100.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="income">
+            <span class="transaction-icon">&#128181;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Direct Deposit</span>
+              <span class="transaction-date">Jul 15, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--positive">+$1,250.00</span>
+          </li>
+
+          <li class="transaction-item" data-type="expense">
+            <span class="transaction-icon">&#127869;</span>
+            <span class="transaction-details">
+              <span class="transaction-name">Restaurant</span>
+              <span class="transaction-date">Jul 12, 2026</span>
+            </span>
+            <span class="transaction-amount transaction-amount--negative">&minus;$38.75</span>
+          </li>
+
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="Asset/java/script.js"></script>
+</body>
+</html>

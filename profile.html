@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | SwiftBank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Asset/css/index.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo sidebar-logo">Swift<span>Bank</span></a>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <span class="sidebar-icon">&#127968;</span> Dashboard
+        </a>
+   
+        </a>
+        <a href="transaction-history.html" class="sidebar-link">
+          <span class="sidebar-icon">&#128220;</span> Transaction History
+        </a>
+        <a href="statements.html" class="sidebar-link">
+          <span class="sidebar-icon">&#128203;</span> Statements
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <span class="sidebar-icon">&#9881;&#65039;</span> Settings
+        </a>
+      </nav>
+      <a href="login.html" class="sidebar-logout">&#8592; Log Out</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="dashboard-main">
+
+      <!-- Top bar -->
+      <div class="dashboard-topbar">
+        <h1>My Profile</h1>
+        <div class="topbar-actions">
+          <button class="icon-btn" aria-label="Notifications">&#128276;<span class="notif-dot"></span></button>
+          <div class="avatar">D</div>
+        </div>
+      </div>
+
+      <!-- Profile header -->
+      <section class="panel profile-header">
+        <div class="profile-avatar-lg">DD</div>
+        <div class="profile-header-info">
+          <h1>Dumo david</h1>
+          <span class="profile-badge">Personal Banking</span>
+          <p class="profile-since">Member since March 2024</p>
+        </div>
+        <a href="settings.html" class="btn btn-outline-dark">Edit Profile</a>
+      </section>
+
+      <!-- Details -->
+      <div class="profile-columns">
+
+        <section class="panel">
+          <h2>Account Details</h2>
+          <div class="detail-row"><span>Email</span><span>dumodavid4fibbs@email.com</span></div>
+          <div class="detail-row"><span>Phone</span><span>(234) 811-891-5622</span></div>
+          <div class="detail-row"><span>Address</span><span>new york</span></div>
+          <div class="detail-row"><span>Account Number</span><span class="mono">&#8226;&#8226;&#8226;&#8226; 5622</span></div>
+        </section>
+
+        <section class="panel">
+          <h2>Linked Accounts</h2>
+          <div class="linked-account-row"><span>Checking</span><span class="mono">  $2,150.00</span></div>
+          <div class="linked-account-row"><span>Savings</span><span class="mono"> $1,800.00</span></div>
+          <div class="linked-account-row"><span>Credit Card</span><span class="mono">&minus;$4,500.00</span></div>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="Asset/java/script.js"></script>
+</body>
+</html>

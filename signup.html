@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | SwiftBank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Asset/css/index.css">
+</head>
+<body class="auth-body">
+
+  <header class="auth-header">
+    <a href="index.html" class="logo">Swift<span>Bank</span></a>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <p class="auth-badge">&#128274; Bank-grade encryption</p>
+      <h1>Create your account</h1>
+      <p class="auth-subtitle">Takes about five minutes. No paperwork.</p>
+
+      <form class="auth-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="david " required>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="18" min="18" max="120" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="name@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input type="password" id="password" placeholder="Create a password" required minlength="8">
+            <button type="button" class="password-toggle" aria-label="Show password">&#128065;</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+      </form>
+
+      <p class="auth-footer-link">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </main>
+
+  <script src="Asset/java/script.js"></script>
+</body>
+</html>

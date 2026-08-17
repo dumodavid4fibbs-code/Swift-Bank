@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | SwiftBank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Asset/css/index.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo sidebar-logo">Swift<span>Bank</span></a>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link active">
+          <span class="sidebar-icon">&#127968;</span> Dashboard
+        </a>
+    
+        </a>
+        <a href="transaction-history.html" class="sidebar-link">
+          <span class="sidebar-icon">&#128220;</span> Transaction History
+        </a>
+        <a href="statements.html" class="sidebar-link">
+          <span class="sidebar-icon">&#128203;</span> Statements
+        </a>
+        <a href="settings.html" class="sidebar-link">
+          <span class="sidebar-icon">&#9881;&#65039;</span> Settings
+        </a>
+      </nav>
+      <a href="login.html" class="sidebar-logout">&#8592; Log Out</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="dashboard-main">
+
+      <!-- Top bar -->
+      <div class="dashboard-topbar">
+        <h1>Dashboard</h1>
+        <div class="topbar-actions">
+          <button class="icon-btn" aria-label="Notifications">&#128276;<span class="notif-dot"></span></button>
+          <a href="profile.html" class="avatar">D</a>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <p class="metric-label">Account Balance</p>
+          <p class="metric-value" id="metric-balance">$4,950.00</p>
+          <p class="metric-trend metric-trend--neutral">Across 3 accounts</p>
+        </div>
+        <div class="metric-card">
+          <p class="metric-label">Monthly Income</p>
+          <p class="metric-value">$3,200.00</p>
+          <p class="metric-trend metric-trend--up">&#8593; 4.2% vs last month</p>
+        </div>
+        <div class="metric-card">
+          <p class="metric-label">Expenses</p>
+          <p class="metric-value">$1,340.00</p>
+          <p class="metric-trend metric-trend--down">&#8593; 2.1% vs last month</p>
+        </div>
+        <div class="metric-card">
+          <p class="metric-label">Savings</p>
+          <p class="metric-value" id="metric-savings">$1,800.00</p>
+          <p class="metric-trend metric-trend--up">&#8593; 6.5% vs last month</p>
+        </div>
+      </section>
+
+      <!-- Transfer + Transactions -->
+      <section class="dashboard-columns">
+
+        <!-- Quick Transfer -->
+        <div class="panel">
+          <h2>Quick Transfer</h2>
+          <form class="transfer-form" id="transfer-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="from-account">From Account</label>
+                <select id="from-account">
+                  <option value="checking">Checking &middot; $2,150.00</option>
+                  <option value="savings">Savings &middot; $1,800.00</option>
+                </select>
+                <p class="available-balance" id="available-balance">Available: $2,150.00</p>
+              </div>
+              <div class="form-group">
+                <label for="to-account">To Account</label>
+                <select id="to-account">
+                  <option value="savings">Savings &middot; $1,800.00</option>
+                  <option value="checking">Checking &middot; $2,150.00</option>
+                  <option value="external">External Account</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" placeholder="0.00" min="1" step="0.01" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Transfer Funds</button>
+            <p class="transfer-confirm" id="transfer-confirm"></p>
+          </form>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recent Transactions</h2>
+            <a href="transaction-history.html" class="panel-link">View All</a>
+          </div>
+          <ul class="transaction-list" id="transaction-list">
+            <li class="transaction-item">
+              <span class="transaction-icon">&#128722;</span>
+              <span class="transaction-details">
+                <span class="transaction-name">Store Purchase</span>
+                <span class="transaction-date">Aug 9, 2026</span>
+              </span>
+              <span class="transaction-amount transaction-amount--negative">&minus;$25.00</span>
+            </li>
+            <li class="transaction-item">
+              <span class="transaction-icon">&#128181;</span>
+              <span class="transaction-details">
+                <span class="transaction-name">Direct Deposit</span>
+                <span class="transaction-date">Aug 8, 2026</span>
+              </span>
+              <span class="transaction-amount transaction-amount--positive">+$1,250.00</span>
+            </li>
+            <li class="transaction-item">
+              <span class="transaction-icon">&#9981;</span>
+              <span class="transaction-details">
+                <span class="transaction-name">Fuel Purchase</span>
+                <span class="transaction-date">Aug 6, 2026</span>
+              </span>
+              <span class="transaction-amount transaction-amount--negative">&minus;$45.00</span>
+            </li>
+            <li class="transaction-item">
+              <span class="transaction-icon">&#127760;</span>
+              <span class="transaction-details">
+                <span class="transaction-name">Internet Payment</span>
+                <span class="transaction-date">Aug 4, 2026</span>
+              </span>
+              <span class="transaction-amount transaction-amount--negative">&minus;$60.00</span>
+            </li>
+            <li class="transaction-item">
+              <span class="transaction-icon">&#128241;</span>
+              <span class="transaction-details">
+                <span class="transaction-name">Mobile Top-up</span>
+                <span class="transaction-date">Aug 2, 2026</span>
+              </span>
+              <span class="transaction-amount transaction-amount--negative">&minus;$10.00</span>
+            </li>
+          </ul>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="Asset/java/script.js"></script>
+</body>
+</html>

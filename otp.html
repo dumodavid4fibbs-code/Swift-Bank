@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Your Identity | SwiftBank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Asset/css/index.css">
+</head>
+<body class="auth-body">
+
+  <header class="auth-header">
+    <a href="index.html" class="logo">Swift<span>Bank</span></a>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="shield-icon">&#128737;</div>
+      <h1>Verify your identity</h1>
+      <p class="auth-subtitle">Enter the 6-digit code sent to your email or phone.</p>
+
+      <form class="auth-form" id="otp-form">
+        <div class="otp-boxes">
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" required>
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" required>
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" required>
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" required>
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" required>
+          <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Verify &amp; Proceed</button>
+      </form>
+
+      <p class="auth-footer-link"><a href="#" id="resend-code">Resend Code</a></p>
+    </div>
+  </main>
+
+  <script src="Asset/java/script.js"></script>
+</body>
+</html>
