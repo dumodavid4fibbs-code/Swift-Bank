@@ -1,3 +1,22 @@
+// Mobile nav menu toggle (hamburger button in the header)
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuToggle.textContent = isOpen ? '\u2715' : '\u2630';
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close the menu automatically once a link is tapped.
+  mainNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuToggle.textContent = '\u2630';
+    });
+  });
+}
+
 // Password show/hide toggle (signup + login pages)
 // Only runs if a .password-toggle button exists on the page.
 document.querySelectorAll('.password-toggle').forEach((toggleBtn) => {
@@ -14,6 +33,18 @@ document.querySelectorAll('.password-toggle').forEach((toggleBtn) => {
 document.querySelectorAll('.auth-form:not(#otp-form)').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    // Signup form gets an extra check: must be 18+ to open an account.
+    if (form.id === 'signup-form') {
+      const age = Number(document.getElementById('age').value);
+      const errorMsg = document.getElementById('signup-error');
+      if (!age || age < 18) {
+        errorMsg.textContent = 'You must be at least 18 years old to open an account.';
+        return;
+      }
+      errorMsg.textContent = '';
+    }
+
     window.location.href = 'otp.html';
   });
 });
@@ -89,7 +120,7 @@ function refreshBalances() {
   const fromSelectEl = document.getElementById('from-account');
   const availableEl = document.getElementById('available-balance');
   if (fromSelectEl && availableEl) {
-    availableEl.textContent = `Available: ${formatCurrency(accounts[fromSelectEl.value])}`;
+    availableEl.textContent = `Available: ${formatCurrency(accounts[fromSelectEl.value])};`
   }
 }
 
@@ -99,6 +130,7 @@ if (transferForm) {
   const fromSelect = document.getElementById('from-account');
   const toSelect = document.getElementById('to-account');
   const transactionList = document.getElementById('transaction-list');
+
   // Set the correct "Available" amount right away, and again any time
   // the person switches which account they're sending from.
   refreshBalances();
@@ -177,51 +209,50 @@ document.querySelectorAll('.filter-btn').forEach((btn) => {
 });
 
 // Statement download buttons (demo only — no real file is generated)
-document.querySelectorAll('.statement-download').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const original = btn.textContent;
-    btn.textContent = 'Downloading...';
-    btn.disabled = true;
+document.querySelectorAll('.statement-download').forEach((btn) => {btn.addEventListener('click', () => {
+  const original = btn.textContent;
+  btn.textContent = 'Downloading...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = '\u2713 Downloaded';
     setTimeout(() => {
-      btn.textContent = '\u2713 Downloaded';
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.disabled = false;
-      }, 1500);
-    }, 800);
-  });
+      btn.textContent = original;
+      btn.disabled = false;
+    }, 1500);
+  }, 800);
+});
 });
 
 // Settings page forms
 // Each .settings-form shows its own confirmation message right below its
 // own Save button, rather than one shared message for the whole page.
 document.querySelectorAll('.settings-form').forEach((form) => {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const confirmMsg = form.querySelector('.settings-confirm');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const confirmMsg = form.querySelector('.settings-confirm');
 
-    // Extra validation just for the password change form.
-    if (form.id === 'password-form') {
-      const newPass = document.getElementById('new-password').value;
-      const confirmPass = document.getElementById('confirm-password').value;
+  // Extra validation just for the password change form.
+  if (form.id === 'password-form') {
+    const newPass = document.getElementById('new-password').value;
+    const confirmPass = document.getElementById('confirm-password').value;
 
-      if (newPass.length < 8) {
-        confirmMsg.style.color = '#C13B3B';
-        confirmMsg.textContent = 'New password must be at least 8 characters.';
-        return;
-      }
-      if (newPass !== confirmPass) {
-        confirmMsg.style.color = '#C13B3B';
-        confirmMsg.textContent = 'New password and confirmation do not match.';
-        return;
-      }
+    if (newPass.length < 8) {
+      confirmMsg.style.color = '#C13B3B';
+      confirmMsg.textContent = 'New password must be at least 8 characters.';
+      return;
     }
+    if (newPass !== confirmPass) {
+      confirmMsg.style.color = '#C13B3B';
+      confirmMsg.textContent = 'New password and confirmation do not match.';
+      return;
+    }
+  }
 
-    confirmMsg.style.color = '#1F7A5C';
-    confirmMsg.textContent = 'Saved successfully.';
-    if (form.id === 'password-form') form.reset();
-    setTimeout(() => { confirmMsg.textContent = ''; }, 3000);
-  });
+  confirmMsg.style.color = '#1F7A5C';
+  confirmMsg.textContent = 'Saved successfully.';
+  if (form.id === 'password-form') form.reset();
+  setTimeout(() => { confirmMsg.textContent = ''; }, 3000);
+});
 });
 
 // FAQ accordion
@@ -229,42 +260,23 @@ document.querySelectorAll('.settings-form').forEach((form) => {
 const faqQuestions = document.querySelectorAll('.faq-question');
 
 faqQuestions.forEach((question) => {
-  question.addEventListener('click', () => {
-    const item = question.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
+question.addEventListener('click', () => {
+  const item = question.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
 
-    // Close any other open FAQ item first (accordion behavior:
-    // only one answer visible at a time).
-    document.querySelectorAll('.faq-item.open').forEach((openItem) => {
-      openItem.classList.remove('open');
-      openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-    });
-
-    // If the clicked item wasn't already open, open it now.
-    if (!isOpen) {
-      item.classList.add('open');
-      question.setAttribute('aria-expanded', 'true');
-    }
+  // Close any other open FAQ item first (accordion behavior:
+  // only one answer visible at a time).
+  document.querySelectorAll('.faq-item.open').forEach((openItem) => {
+    openItem.classList.remove('open');
+    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
   });
+
+  // If the clicked item wasn't already open, open it now.
+  if (!isOpen) {
+    item.classList.add('open');
+    question.setAttribute('aria-expanded', 'true');
+  }
+});
 });
 
-// Signup / Login forms: on submit, send the user to the OTP checkpoint.
-// (No real accounts are created here — this is a front-end demo flow.)
-document.querySelectorAll('.auth-form:not(#otp-form)').forEach((form) => {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
 
-    // Signup form gets an extra check: must be 18+ to open an account.
-    if (form.id === 'signup-form') {
-      const age = Number(document.getElementById('age').value);
-      const errorMsg = document.getElementById('signup-error');
-      if (!age || age < 18) {
-        errorMsg.textContent = 'You must be at least 18 years old to open an account.';
-        return;
-      }
-      errorMsg.textContent = '';
-    }
-
-    window.location.href = 'otp.html';
-  });
-});

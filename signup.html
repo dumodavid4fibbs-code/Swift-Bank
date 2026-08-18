@@ -18,17 +18,59 @@
     <div class="auth-card">
       <p class="auth-badge">&#128274; Bank-grade encryption</p>
       <h1>Create your account</h1>
-      <p class="auth-subtitle">Takes about five minutes. No paperwork.</p>
+      <p class="auth-subtitle">Takes about five minutes.</p>
 
-      <form class="auth-form">
+      <form class="auth-form" id="signup-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" placeholder="Austin" required>
+          </div>
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="David" required>
+          </div>
+        </div>
+
         <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="david " required>
+          <label for="other-names">Other Names</label>
+          <input type="text" id="other-names" placeholder="Optional">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sex">Sex</label>
+            <select id="sex" required>
+              <option value="" disabled selected>Select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="marital-status">Marital Status</label>
+            <select id="marital-status" required>
+              <option value="" disabled selected>Select</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="divorced">Divorced</option>
+              <option value="widowed">Widowed</option>
+            </select>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="age">Age</label>
           <input type="number" id="age" placeholder="18" min="18" max="120" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(346) 123-4567" required>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Residential Address</label>
+          <textarea id="address" rows="2" placeholder="Street, City, State" required></textarea>
         </div>
 
         <div class="form-group">
@@ -45,6 +87,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+        <p class="auth-error" id="signup-error"></p>
       </form>
 
       <p class="auth-footer-link">Already have an account? <a href="login.html">Login</a></p>

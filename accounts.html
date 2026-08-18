@@ -10,20 +10,25 @@
 </head>
 <body>
 
+  <!-- Header / Nav -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="logo">Swift<span>Bank</span></a>
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav">
         <a href="accounts.html">Personal</a>
         <a href="accounts.html#business">Business</a>
         <a href="loans.html">Loans</a>
+        <a href="about us.html">About</a>
         <a href="faq-contact.html">FAQ &amp; Contact</a>
-        <a href="about us.html">About Us</a>
       </nav>
-      <a href="login.html" class="btn btn-outline">Online Login</a>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Online Login</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
     </div>
   </header>
 
+  <!-- Page intro -->
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Accounts</p>
@@ -32,6 +37,7 @@
     </div>
   </section>
 
+  <!-- Personal Accounts -->
   <section id="personal" class="accounts-section">
     <div class="container">
       <h2>Personal Accounts</h2>
@@ -62,6 +68,7 @@
     </div>
   </section>
 
+  <!-- Business Accounts -->
   <section id="business" class="accounts-section accounts-section--alt">
     <div class="container">
       <h2>Business Services</h2>
@@ -92,6 +99,7 @@
     </div>
   </section>
 
+  <!-- CTA band -->
   <section class="cta-band">
     <div class="container cta-band-wrap">
       <h2>Ready to open an account?</h2>
@@ -99,6 +107,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-wrap">
       <div>
@@ -117,6 +126,7 @@
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
+        <a href="about-us.html">About Us</a>
         <a href="faq-contact.html">FAQ</a>
         <a href="faq-contact.html">Contact</a>
       </div>
@@ -126,5 +136,6 @@
     </div>
   </footer>
 
+  <script src="Asset/java/script.js"></script>
 </body>
 </html>

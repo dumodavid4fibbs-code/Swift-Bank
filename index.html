@@ -7,24 +7,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Asset/css/index.css">
-  <link rel="shortcut icon" href="Asset/image/photo_6044102881058688606_y.jpg" type="image/x-icon">
 </head>
 <body>
 
+  <!-- Header / Nav -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="logo">Swift<span>Bank</span></a>
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav">
         <a href="accounts.html">Personal</a>
         <a href="accounts.html#business">Business</a>
         <a href="loans.html">Loans</a>
+        <a href="about us.html">About</a>
         <a href="faq-contact.html">FAQ &amp; Contact</a>
-        <a href="about us.html">About Us</a>
       </nav>
-      <a href="login.html" class="btn btn-outline">Online Login</a>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Online Login</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-wrap">
       <div class="hero-copy">
@@ -37,11 +41,12 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="Asset/image/photo_6044102881058688589_y.jpg" alt="Colleagues smiling and reviewing finances together in a modern office">
+        <img src="Asset/image/photo_6044102881058688589_y.jpg" alt="bank">
       </div>
     </div>
   </section>
 
+  <!-- Services -->
   <section class="services">
     <div class="container">
       <h2>Our Services</h2>
@@ -62,6 +67,7 @@
     </div>
   </section>
 
+  <!-- Why Choose Us -->
   <section class="why-us">
     <div class="container">
       <h2>Why Choose SwiftBank</h2>
@@ -86,6 +92,7 @@
     </div>
   </section>
 
+  <!-- Mobile Banking Feature -->
   <section class="mobile-feature">
     <div class="container mobile-feature-wrap">
       <div class="mobile-feature-image">
@@ -105,6 +112,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-wrap">
       <div>
@@ -123,6 +131,7 @@
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
+        <a href="about-us.html">About Us</a>
         <a href="faq-contact.html">FAQ</a>
         <a href="faq-contact.html">Contact</a>
       </div>
@@ -132,5 +141,6 @@
     </div>
   </footer>
 
+  <script src="Asset/java/script.js"></script>
 </body>
 </html>

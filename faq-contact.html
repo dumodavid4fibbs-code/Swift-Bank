@@ -10,20 +10,25 @@
 </head>
 <body>
 
+  <!-- Header / Nav -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="logo">Swift<span>Bank</span></a>
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav">
         <a href="accounts.html">Personal</a>
         <a href="accounts.html#business">Business</a>
         <a href="loans.html">Loans</a>
+        <a href="about us.html">About</a>
         <a href="faq-contact.html">FAQ &amp; Contact</a>
-        <a href="about us.html">About Us</a>
       </nav>
-      <a href="login.html" class="btn btn-outline">Online Login</a>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Online Login</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
     </div>
   </header>
 
+  <!-- Page intro -->
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Support</p>
@@ -32,6 +37,7 @@
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="accounts-section">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
@@ -98,15 +104,15 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section class="accounts-section accounts-section--alt">
-    <div class="container">
-      <h2>Contact Us</h2>
+    <div class="container"><h2>Contact Us</h2>
       <div class="contact-grid">
 
         <form class="contact-form">
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="David emmanuel" required>
+            <input type="text" id="name" placeholder="Jane Doe" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -121,7 +127,7 @@
 
         <div class="contact-info-card">
           <h3>Reach Us Directly</h3>
-          <p class="contact-info-row"><span>Phone</span>1-234-SWIFTBANK</p>
+          <p class="contact-info-row"><span>Phone</span>1-800-SWIFTBANK</p>
           <p class="contact-info-row"><span>Email</span>support@swiftbank.com</p>
           <p class="contact-info-row"><span>Hours</span>Mon&ndash;Fri, 8am&ndash;8pm ET</p>
           <p class="contact-info-row"><span>Support</span>24/7 in-app chat</p>
@@ -150,6 +156,7 @@
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
+        <a href="about-us.html">About Us</a>
         <a href="faq-contact.html">FAQ</a>
         <a href="faq-contact.html">Contact</a>
       </div>
